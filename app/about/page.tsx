@@ -3,8 +3,8 @@ import type { Metadata } from "next"
 import { Clock, Award, Users, Wrench } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us - Rider's Haven",
-  description: "Learn about our motorcycle shop, our team, and our commitment to the riding community.",
+  title: "About Us - FICS Motorcycles",
+  description: "Learn about FICS Motorcycles, our team, and our commitment to the riding community.",
 }
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">About Rider's Haven</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">About FICS Motorcycles</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Your trusted partner in all things motorcycles. We're passionate riders serving riders.
           </p>
@@ -26,7 +26,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-6">Our Story</h2>
           <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
             <p>
-              Founded in [YEAR], Rider's Haven has been serving the local motorcycle community with dedication and
+              Founded in [YEAR], FICS Motorcycles has been serving the local motorcycle community with dedication and
               expertise. What started as a small garage operation has grown into a full-service motorcycle shop, but
               we've never lost sight of what matters most: our passion for motorcycles and the riders who love them.
             </p>

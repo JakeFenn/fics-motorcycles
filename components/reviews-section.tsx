@@ -1,49 +1,84 @@
-import { Star } from "lucide-react"
+import { Star, Quote } from "lucide-react"
 
 const reviews = [
   {
-    name: "Mike Johnson",
+    name: "Danielle Steward",
+    initials: "DS",
     rating: 5,
-    text: "Best motorcycle shop in town! The team really knows their stuff and always goes above and beyond. Had my Harley serviced here and it runs better than ever.",
-    bike: "Harley-Davidson Road King",
+    text: "Brilliant customer service 👏 bought the 16inch revvi bike for my little boy he absolutely loves it, was shown every bit of detail for the bike an how to use. Perfect thankyou so much. Highly recommend 👌",
+    bike: "Revvi",
   },
   {
-    name: "Sarah Chen",
+    name: "Aaron Piwowar",
+    initials: "AP",
     rating: 5,
-    text: "Incredible customer service and fair pricing. They helped me find the perfect gear for my first bike and made me feel welcome as a new rider.",
-    bike: "Yamaha MT-07",
+    text: "Tell you what Ian is super helpful and friendly given top advice when buying a motorcycle today and couldn't be any happier with him. Will definitely return for services ect and he's only round the corner for me!",
+    featured: true,
   },
   {
-    name: "David Martinez",
+    name: "Dean Johnson",
+    initials: "DJ",
     rating: 5,
-    text: "These guys are honest and trustworthy. They could have charged me for a bunch of unnecessary work but instead saved me money with smart recommendations.",
-    bike: "Honda CB650R",
+    text: "Really good service and Revvi bike was ready to pick up very quickly. Also was able to get a helmet and goggles and try on for size.",
+    bike: "Revvi",
   },
+
 ]
 
 export function ReviewsSection() {
   return (
-    <section className="py-24 px-4">
+    <section className="py-28 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">What Riders Say</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our community
-          </p>
+        {/* Section header */}
+        <div className="text-center mb-16 space-y-4">
+          <p className="text-sm font-semibold text-primary uppercase tracking-[0.15em]">Testimonials</p>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight">What riders say</h2>
+          {/* Aggregate rating */}
+          <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary/10 border border-primary/20">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+              ))}
+            </div>
+            <span className="text-sm font-bold text-foreground">4.6</span>
+            <span className="text-sm text-muted-foreground">· 50+ reviews on Google</span>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5">
           {reviews.map((review) => (
-            <div key={review.name} className="p-8 rounded-2xl bg-card border border-border">
-              <div className="flex gap-1 mb-4">
+            <div
+              key={review.name}
+              className={`relative p-8 rounded-2xl border transition-all duration-300 flex flex-col ${
+                review.featured
+                  ? "bg-primary/10 border-primary/30 shadow-lg shadow-primary/10"
+                  : "bg-card border-border hover:border-primary/30 hover:shadow-md"
+              }`}
+            >
+              {/* Decorative quote mark */}
+              <Quote className="absolute top-6 right-6 w-8 h-8 text-primary/15 fill-primary/15" />
+
+              {/* Stars */}
+              <div className="flex gap-0.5 mb-5">
                 {Array.from({ length: review.rating }).map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">"{review.text}"</p>
-              <div className="pt-4 border-t border-border">
-                <p className="font-semibold">{review.name}</p>
-                <p className="text-sm text-muted-foreground">{review.bike}</p>
+
+              {/* Review text */}
+              <p className="text-foreground/80 leading-relaxed mb-6 flex-1 text-[0.95rem]">
+                &ldquo;{review.text}&rdquo;
+              </p>
+
+              {/* Reviewer */}
+              <div className="flex items-center gap-3 pt-5 border-t border-border/60">
+                <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xs font-bold text-primary">{review.initials}</span>
+                </div>
+                <div>
+                  <p className="font-semibold text-sm">{review.name}</p>
+                  <p className="text-xs text-muted-foreground">{review.bike}</p>
+                </div>
               </div>
             </div>
           ))}

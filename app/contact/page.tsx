@@ -1,5 +1,7 @@
-import { Button } from "@/components/ui/button"
+import type React from "react"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
+import { ContactForm } from "@/components/contact-form"
+import { shop } from "@/lib/shop"
 
 export default function ContactPage() {
   return (
@@ -16,80 +18,35 @@ export default function ContactPage() {
           <div>
             <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
             <div className="space-y-6">
-              <ContactItem icon={MapPin} label="Address" value="[Your Street Address]" value2="[City, State ZIP]" />
-              <ContactItem icon={Phone} label="Phone" value="[Your Phone Number]" />
-              <ContactItem icon={Mail} label="Email" value="[Your Email Address]" />
+              <ContactItem icon={MapPin} label="Address" value={shop.address.street} value2={`${shop.address.city}, ${shop.address.postcode}`} />
+              <ContactItem icon={Phone} label="Phone" value={shop.phone} />
+              <ContactItem icon={Mail} label="Email" value={shop.email} />
               <ContactItem
                 icon={Clock}
                 label="Business Hours"
-                value="Monday - Friday: [XX]AM - [XX]PM"
-                value2="Saturday: [XX]AM - [XX]PM"
-                value3="Sunday: Closed"
+                value={shop.hours.weekday}
+                value2={`Sunday: ${shop.hours.sunday}`}
               />
             </div>
           </div>
 
           <div>
             <h2 className="text-3xl font-bold mb-8">Send Us a Message</h2>
-            <form className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
-                  placeholder="your.email@example.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Phone (optional)
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors"
-                  placeholder="(555) 123-4567"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-card border border-border focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us how we can help..."
-                />
-              </div>
-              <Button type="submit" size="lg" className="w-full rounded-full">
-                Send Message
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
 
-        <div className="rounded-2xl overflow-hidden border border-border h-[400px]">
-          <div className="w-full h-full bg-muted/30 flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-muted-foreground">[Add your Google Maps embed or map image here]</p>
-            </div>
-          </div>
+        <div className="rounded-2xl overflow-hidden border border-border h-[450px]">
+          <iframe
+            src={shop.address.mapsEmbedUrl}
+            width="100%"
+            height="100%"
+            style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title={`Map showing ${shop.name}`}
+          />
         </div>
       </div>
     </main>
@@ -103,7 +60,7 @@ function ContactItem({
   value2,
   value3,
 }: {
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   label: string
   value: string
   value2?: string
