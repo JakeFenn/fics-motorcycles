@@ -1,7 +1,7 @@
 // ============================================================
 // WEBSITE CONTENT
 // Edit the text in this file to update what appears on the site.
-// No code knowledge required — just change the words between
+// No code knowledge required. Just change the words between
 // the quote marks and save.
 // ============================================================
 
@@ -51,25 +51,25 @@ export const content = {
   products: {
     sectionLabel: "What We Offer",
     heading:      "Everything for your ride",
-    subheading:   "From custom builds to the gear that keeps you safe — all under one roof.",
+    subheading:   "From custom builds to the gear that keeps you safe, all under one roof.",
     viewAllButton: "View All Services",
     items: [
       {
         title: "Certified Pre-Builds",
         description:
-          "As certified partners, we pre-build and inspect bikes straight from our suppliers so yours arrives fully assembled and checked off — ready to ride from day one.",
+          "As certified partners, we pre-build and inspect bikes straight from our suppliers so yours arrives fully assembled and checked off, ready to ride from day one.",
         cta: "Find Out More",
       },
       {
         title: "Premium Parts",
         description:
-          "OEM and aftermarket parts from leading brands — whether you need a routine service part or a performance upgrade, we stock or can source exactly what your bike needs.",
+          "OEM and aftermarket parts from leading brands. Whether you need a routine service part or a performance upgrade, we stock or can source exactly what your bike needs.",
         cta: "Shop Parts",
       },
       {
         title: "Riding Gear",
         description:
-          "From helmets and jackets to gloves, boots, and body armour — we carry gear for every rider and every budget, with advice from people who actually ride.",
+          "From helmets and jackets to gloves, boots, and body armour. We carry gear for every rider and every budget, with advice from people who actually ride.",
         cta: "Browse Gear",
       },
     ],
@@ -100,7 +100,7 @@ export const content = {
       {
         title: "Locks & Security",
         description:
-          "Make sure only you can enjoy your precious ride with our vast selection of locks and alarms",
+          "Make sure only you can enjoy your precious ride with our vast selection of locks and alarms.",
       },
     ],
   },
@@ -139,7 +139,7 @@ export const content = {
   // ── Home page — Contact CTA section ──────────────────────────────────────
   contactSection: {
     heading:       "Come and see us",
-    subheading:    "We're always happy to chat bikes — drop in, give us a call, or send a message.",
+    subheading:    "We're always happy to chat bikes. Drop in, give us a call, or send a message.",
     locationLabel: "Location",
     phoneLabel:    "Phone",
     emailLabel:    "Email",
@@ -177,14 +177,14 @@ export const content = {
 
     storyHeading: "Our Story",
     storyParagraphs: [
-      "Founded in 2008, FICS Motorcycles has been serving the local motorcycle community with dedication and expertise. What started as a small garage operation has grown into a full-service motorcycle shop, but we've never lost sight of what matters most: our passion for motorcycles and the riders who love them.",
-      "Every day, we work with riders of all experience levels—from those just starting their journey to seasoned veterans who've been on two wheels for decades. Our team brings together years of combined experience in motorcycle maintenance, customization, and performance upgrades.",
+      "Founded in 2009, FICS Motorcycles has been serving the local motorcycle community with dedication and expertise. What started as a small garage operation has grown into a full-service motorcycle shop, but we've never lost sight of what matters most: our passion for motorcycles and the riders who love them.",
+      "Every day, we work with riders of all experience levels, from those just starting their journey to seasoned veterans who've been on two wheels for decades. Our team brings together years of combined experience in motorcycle maintenance, customisation, and performance upgrades.",
       "We believe in building lasting relationships with our customers, treating every bike as if it were our own, and contributing to the vibrant riding community that makes this such a special place to live and ride.",
     ],
 
     valuesHeading: "Why Choose Us",
     values: [
-      { title: "Years of Experience",   description: "Decades of combined expertise in motorcycle service, repair, and customization." },
+      { title: "Years of Experience",   description: "Decades of combined expertise in motorcycle service, repair, and customisation." },
       { title: "Certified Technicians", description: "Our team is trained and certified to work on all major motorcycle brands." },
       { title: "Community Focused",     description: "We're active members of the local riding community and support rider events." },
       { title: "Quality Work",          description: "We stand behind our work with comprehensive warranties and guarantees." },
@@ -216,7 +216,7 @@ export const content = {
     items: [
       {
         title:       "Routine Maintenance",
-        description: "Keep your bike running smoothly with regular maintenance services including oil changes, tire changes, brake service, chain adjustments, and fluid checks.",
+        description: "Keep your bike running smoothly with regular maintenance services including oil changes, tyre changes, brake service, chain adjustments, and fluid checks.",
         price:       "Starting at $[XX]",
       },
       {
