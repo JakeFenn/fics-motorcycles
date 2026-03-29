@@ -5,6 +5,7 @@ import "./globals.css"
 import { BubbleNavbar } from "@/components/bubble-navbar"
 import { Toaster } from "sonner"
 import { content } from "@/lib/content"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const fontSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <BubbleNavbar />
         {children}
         <Toaster theme="dark" />
+        <SpeedInsights />
       </body>
     </html>
   )
