@@ -2,12 +2,15 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Clock, Mail, ArrowRight } from "lucide-react"
 import { shop } from "@/lib/shop"
+import { content } from "@/lib/content"
+
+const c = content.contactSection
 
 const contactInfo = [
-  { icon: MapPin, label: "Location", value: shop.address.full },
-  { icon: Phone, label: "Phone", value: shop.phone },
-  { icon: Mail, label: "Email", value: shop.email },
-  { icon: Clock, label: "Hours", value: shop.hours.weekday },
+  { icon: MapPin, label: c.locationLabel, value: shop.address.full },
+  { icon: Phone,  label: c.phoneLabel,    value: shop.phone },
+  { icon: Mail,   label: c.emailLabel,    value: shop.email },
+  { icon: Clock,  label: c.hoursLabel,    value: shop.hours.weekday },
 ]
 
 export function ContactSection() {
@@ -20,10 +23,10 @@ export function ContactSection() {
           <div className="space-y-8">
             <div className="space-y-4">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight leading-tight">
-                Come and see us
+                {c.heading}
               </h2>
               <p className="text-muted-foreground text-pretty">
-                We&apos;re always happy to chat bikes — drop in, give us a call, or send a message.
+                {c.subheading}
               </p>
             </div>
 
@@ -39,15 +42,12 @@ export function ContactSection() {
               ))}
             </div>
 
-            <Button
-              size="lg"
-              className="rounded-full px-8 gap-2 shadow-lg shadow-primary/20"
-              render={<Link href="/contact" />}
-              nativeButton={false}
-            >
-              Get in Touch
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="rounded-full px-8 gap-2 shadow-lg shadow-primary/20">
+                {c.ctaButton}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
 
           {/* Right — map */}

@@ -2,28 +2,31 @@ import type React from "react"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { shop } from "@/lib/shop"
+import { content } from "@/lib/content"
+
+const c = content.contactPage
 
 export default function ContactPage() {
   return (
     <main className="min-h-screen pt-32 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold mb-4 text-balance">Get In Touch</h1>
+          <h1 className="text-5xl font-bold mb-4 text-balance">{c.heading}</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            We're here to help with all your motorcycle needs
+            {c.subheading}
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 mb-16">
           <div>
-            <h2 className="text-3xl font-bold mb-8">Contact Information</h2>
+            <h2 className="text-3xl font-bold mb-8">{c.infoHeading}</h2>
             <div className="space-y-6">
-              <ContactItem icon={MapPin} label="Address" value={shop.address.street} value2={`${shop.address.city}, ${shop.address.postcode}`} />
-              <ContactItem icon={Phone} label="Phone" value={shop.phone} />
-              <ContactItem icon={Mail} label="Email" value={shop.email} />
+              <ContactItem icon={MapPin} label={c.addressLabel} value={shop.address.street} value2={`${shop.address.city}, ${shop.address.postcode}`} />
+              <ContactItem icon={Phone} label={c.phoneLabel} value={shop.phone} />
+              <ContactItem icon={Mail} label={c.emailLabel} value={shop.email} />
               <ContactItem
                 icon={Clock}
-                label="Business Hours"
+                label={c.hoursLabel}
                 value={shop.hours.weekday}
                 value2={`Sunday: ${shop.hours.sunday}`}
               />
@@ -31,7 +34,7 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold mb-8">Send Us a Message</h2>
+            <h2 className="text-3xl font-bold mb-8">{c.formHeading}</h2>
             <ContactForm />
           </div>
         </div>

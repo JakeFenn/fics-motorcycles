@@ -4,12 +4,13 @@ import { Noto_Sans } from "next/font/google"
 import "./globals.css"
 import { BubbleNavbar } from "@/components/bubble-navbar"
 import { Toaster } from "sonner"
+import { content } from "@/lib/content"
 
 const fontSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "FICS Motorcycles",
-  description: "Expert motorcycle service, premium parts, and a passionate community of riders. Your trusted local motorcycle shop.",
+  title: content.site.title,
+  description: content.site.description,
 }
 
 export default function RootLayout({

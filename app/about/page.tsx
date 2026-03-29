@@ -1,11 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Clock, Award, Users, Wrench } from "lucide-react"
+import { content } from "@/lib/content"
+
+const c = content.about
 
 export const metadata: Metadata = {
-  title: "About Us - FICS Motorcycles",
-  description: "Learn about FICS Motorcycles, our team, and our commitment to the riding community.",
+  title: c.metaTitle,
+  description: c.metaDescription,
 }
+
+const valueIcons = [Clock, Award, Users, Wrench]
 
 export default function AboutPage() {
   return (
@@ -13,9 +18,9 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">About FICS Motorcycles</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">{c.heading}</h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            Your trusted partner in all things motorcycles. We're passionate riders serving riders.
+            {c.subheading}
           </p>
         </div>
       </section>
@@ -23,23 +28,11 @@ export default function AboutPage() {
       {/* Our Story */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6">Our Story</h2>
+          <h2 className="text-3xl font-bold mb-6">{c.storyHeading}</h2>
           <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
-            <p>
-              Founded in [YEAR], FICS Motorcycles has been serving the local motorcycle community with dedication and
-              expertise. What started as a small garage operation has grown into a full-service motorcycle shop, but
-              we've never lost sight of what matters most: our passion for motorcycles and the riders who love them.
-            </p>
-            <p>
-              Every day, we work with riders of all experience levels—from those just starting their journey to seasoned
-              veterans who've been on two wheels for decades. Our team brings together years of combined experience in
-              motorcycle maintenance, customization, and performance upgrades.
-            </p>
-            <p>
-              We believe in building lasting relationships with our customers, treating every bike as if it were our
-              own, and contributing to the vibrant riding community that makes this such a special place to live and
-              ride.
-            </p>
+            {c.storyParagraphs.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
           </div>
         </div>
       </section>
@@ -47,28 +40,19 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Us</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">{c.valuesHeading}</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ValueCard
-              icon={<Clock className="w-8 h-8" />}
-              title="Years of Experience"
-              description="Decades of combined expertise in motorcycle service, repair, and customization."
-            />
-            <ValueCard
-              icon={<Award className="w-8 h-8" />}
-              title="Certified Technicians"
-              description="Our team is trained and certified to work on all major motorcycle brands."
-            />
-            <ValueCard
-              icon={<Users className="w-8 h-8" />}
-              title="Community Focused"
-              description="We're active members of the local riding community and support rider events."
-            />
-            <ValueCard
-              icon={<Wrench className="w-8 h-8" />}
-              title="Quality Work"
-              description="We stand behind our work with comprehensive warranties and guarantees."
-            />
+            {c.values.map((value, i) => {
+              const Icon = valueIcons[i]
+              return (
+                <ValueCard
+                  key={value.title}
+                  icon={<Icon className="w-8 h-8" />}
+                  title={value.title}
+                  description={value.description}
+                />
+              )
+            })}
           </div>
         </div>
       </section>
@@ -76,32 +60,17 @@ export default function AboutPage() {
       {/* Our Mission */}
       <section className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold mb-6">{c.missionHeading}</h2>
           <p className="text-lg leading-relaxed text-muted-foreground mb-6">
-            Our mission is simple: to provide exceptional service, quality parts, and expert advice to every rider who
-            walks through our doors. We're committed to:
+            {c.missionIntro}
           </p>
           <ul className="space-y-3 text-lg text-muted-foreground">
-            <li className="flex items-start gap-3">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span>Delivering honest, transparent service with no surprises</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span>Using only quality parts from trusted manufacturers</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span>Educating riders about proper maintenance and safety</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span>Supporting and growing the local riding community</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-primary font-bold mt-1">•</span>
-              <span>Continuously improving our skills and staying current with new technologies</span>
-            </li>
+            {c.missionPoints.map((point, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="text-primary font-bold mt-1">•</span>
+                <span>{point}</span>
+              </li>
+            ))}
           </ul>
         </div>
       </section>
@@ -109,19 +78,17 @@ export default function AboutPage() {
       {/* Meet the Owner */}
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-center">Meet the Owner</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center">{c.ownerHeading}</h2>
           <p className="text-lg text-center text-muted-foreground mb-12">
-            Passionate about motorcycles and dedicated to providing exceptional service to the riding community.
+            {c.ownerSubheading}
           </p>
           <div className="max-w-2xl mx-auto">
             <div className="border rounded-lg p-8 space-y-4 bg-card hover:border-primary/50 transition-colors">
               <div className="w-32 h-32 rounded-full bg-muted mx-auto mb-4" />
-              <h3 className="text-2xl font-semibold text-center">[Owner Name]</h3>
-              <p className="text-primary text-center font-medium text-lg">Owner / Lead Technician</p>
+              <h3 className="text-2xl font-semibold text-center">{c.ownerName}</h3>
+              <p className="text-primary text-center font-medium text-lg">{c.ownerTitle}</p>
               <p className="text-muted-foreground leading-relaxed text-center">
-                [Brief bio about your experience with motorcycles, how you got started, your specialties,
-                certifications, and what drives your passion for serving the riding community. Include years of
-                experience and any notable achievements or training.]
+                {c.ownerBio}
               </p>
             </div>
           </div>

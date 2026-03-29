@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button"
 import { MapPin, Clock, Phone, ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { shop } from "@/lib/shop"
+import { content } from "@/lib/content"
+
+const c = content.hero
 
 export function HeroSection() {
   return (
@@ -14,46 +17,45 @@ export function HeroSection() {
 
           {/* Main Heading */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance leading-[1.05]">
-            Your local
+            {c.headingLine1}
             <br />
-            <span className="text-primary">motorcycle</span>
+            <span className="text-primary">{c.headingLine2}</span>
             <br />
-            <span className="text-muted-foreground/70">community</span>
+            <span className="text-muted-foreground/70">{c.headingLine3}</span>
           </h1>
 
           {/* Subheading */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0 text-pretty leading-relaxed">
-            Expert service, premium parts, and a passionate community of riders.
-            Your trusted partner on every ride.
+            {c.subheading}
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
-            <Button
-              size="lg"
-              className="rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow"
-              render={<Link href="/contact" />}
-              nativeButton={false}
-            >
-              Get Directions
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="rounded-full px-8 h-12 text-base font-semibold border-border hover:border-primary/50 hover:bg-primary/5 bg-transparent gap-2"
-              render={<Link href="/services" />}
-              nativeButton={false}
-            >
-              Our Services
-              <ArrowRight className="w-4 h-4" />
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="rounded-full px-8 h-12 text-base font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-shadow"
+              >
+                {c.ctaPrimary}
+              </Button>
+            </Link>
+            <Link href="/services">
+              <Button
+                size="lg"
+                variant="outline"
+                className="rounded-full px-8 h-12 text-base font-semibold border-border hover:border-primary/50 hover:bg-primary/5 bg-transparent gap-2"
+              >
+                {c.ctaSecondary}
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </Link>
           </div>
 
           {/* Store Info Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4">
-            <StoreInfoCard icon={MapPin} label="Location" value={shop.address.street} />
-            <StoreInfoCard icon={Clock} label="Hours" value={shop.hours.short} />
-            <StoreInfoCard icon={Phone} label="Contact" value={shop.phone} />
+            <StoreInfoCard icon={MapPin} label={c.locationLabel} value={shop.address.street} />
+            <StoreInfoCard icon={Clock} label={c.hoursLabel} value={shop.hours.short} />
+            <StoreInfoCard icon={Phone} label={c.contactLabel} value={shop.phone} />
           </div>
         </div>
 
@@ -78,10 +80,10 @@ export function HeroSection() {
       {/* Authorized Dealers */}
       <div className="max-w-7xl mx-auto w-full relative z-10 pt-10">
         <p className="text-center text-sm font-semibold text-primary uppercase tracking-[0.15em] mb-8">
-          Official Authorised Dealer
+          {c.authorisedDealerBadge}
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {["Revvi", "Stomp", "Other", "Other2"].map((brand) => (
+          {c.brands.map((brand) => (
             <div
               key={brand}
               className="flex items-center justify-center px-6 py-5 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"

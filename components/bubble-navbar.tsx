@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { shop } from "@/lib/shop"
+import { content } from "@/lib/content"
+
+const c = content.nav
 
 function FacebookIcon({ className }: { className?: string }) {
   return (
@@ -24,25 +27,9 @@ function InstagramIcon({ className }: { className?: string }) {
   )
 }
 
-function YoutubeIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-    </svg>
-  )
-}
-
 export function BubbleNavbar() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  const links = [
-    { id: "home", label: "Home", href: "/" },
-    { id: "revvi", label: "Revvi", href: "/revvi" },
-    { id: "about", label: "About", href: "/about" },
-    { id: "services", label: "Services", href: "/services" },
-    { id: "contact", label: "Contact", href: "/contact" },
-  ]
 
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href))
 
@@ -50,9 +37,9 @@ export function BubbleNavbar() {
     <>
       <Link href="/" className="hidden md:flex fixed top-6 left-6 z-50 items-center gap-2">
         <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-          <span className="text-primary-foreground font-bold text-base">FM</span>
+          <span className="text-primary-foreground font-bold text-base">{c.logoInitials}</span>
         </div>
-        <span className="font-bold text-foreground text-lg whitespace-nowrap">FICS Motorcycles</span>
+        <span className="font-bold text-foreground text-lg whitespace-nowrap">{c.logoText}</span>
       </Link>
 
       <div className="hidden md:flex fixed top-6 right-6 z-50 items-center gap-2">
@@ -74,20 +61,11 @@ export function BubbleNavbar() {
         >
           <InstagramIcon className="w-4 h-4 text-primary" />
         </a>
-        <a
-          href={shop.social.youtube}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-10 h-10 rounded-full bg-card/80 backdrop-blur-md border border-border flex items-center justify-center hover:bg-primary/20 transition-colors"
-          aria-label="YouTube"
-        >
-          <YoutubeIcon className="w-4 h-4 text-primary" />
-        </a>
       </div>
 
       <nav className="hidden md:block fixed top-6 left-1/2 -translate-x-1/2 z-50">
         <div className="flex items-center gap-2 bg-card/80 backdrop-blur-md border border-border rounded-full px-6 py-3 shadow-lg">
-          {links.map((link) => (
+          {c.links.map((link) => (
             <Link
               key={link.id}
               href={link.href}
@@ -110,9 +88,9 @@ export function BubbleNavbar() {
         <div className="flex items-center justify-between bg-card/80 backdrop-blur-md border border-border rounded-full px-4 py-3 shadow-lg">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm">FM</span>
+              <span className="text-primary-foreground font-bold text-sm">{c.logoInitials}</span>
             </div>
-            <span className="font-bold text-foreground text-base">FICS Motorcycles</span>
+            <span className="font-bold text-foreground text-base">{c.logoText}</span>
           </Link>
 
           <button
@@ -126,7 +104,7 @@ export function BubbleNavbar() {
 
         {mobileMenuOpen && (
           <div className="mt-2 bg-card/95 backdrop-blur-md border border-border rounded-2xl p-2 shadow-lg">
-            {links.map((link) => (
+            {c.links.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
