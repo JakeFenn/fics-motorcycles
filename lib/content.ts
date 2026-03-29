@@ -299,16 +299,31 @@ export const content = {
         name:     "Revvi Twelve",
         age:      "3-6 years",
         features: ['12" wheels', "Adjustable speed settings", "Up to 60 mins ride time"],
+        image:    "/revvi-twelve.jpg",
       },
       {
         name:     "Revvi Sixteen",
         age:      "5-9 years",
         features: ['16" wheels', "3 speed modes", "Up to 90 mins ride time"],
+        image:    "/revvi-sixteen.jpg",
+      },
+      {
+        name:     "Revvi Sixteen Plus",
+        age:      "5-9 years",
+        features: ['16" wheels', "Enhanced power", "Up to 90 mins ride time"],
+        image:    "/revvi-sixteen-plus.jpg",
+      },
+      {
+        name:     "Revvi Eighteen",
+        age:      "6-10 years",
+        features: ['18" wheels', "3 speed modes", "Up to 100 mins ride time"],
+        image:    "/revvi-eighteen.jpg",
       },
       {
         name:     "Revvi Twenty",
         age:      "7-12 years",
         features: ['20" wheels', "Advanced controls", "Up to 120 mins ride time"],
+        image:    "/revvi-twenty.jpg",
       },
     ],
 

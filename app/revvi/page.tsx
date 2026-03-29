@@ -72,7 +72,7 @@ export default function RevviPage() {
                 className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-colors"
               >
                 <div className="relative h-64">
-                  <Image src={`/${model.name.toLowerCase().replace(" ", "-")}.jpg`} alt={model.name} fill className="object-cover" />
+                  <Image src={model.image} alt={model.name} fill className="object-cover" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-2">{model.name}</h3>
