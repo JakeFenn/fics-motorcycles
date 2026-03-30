@@ -1,28 +1,31 @@
 "use client"
 
-import type React from "react"
-import { useState } from "react"
+import { useActionState } from "react"
+import { useEffect, useRef } from "react"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { content } from "@/lib/content"
+import { submitContactForm } from "@/app/contact/contact"
 
 const c = content.contactForm
 
-export function ContactForm() {
-  const [pending, setPending] = useState(false)
+const initialState = { status: "idle" as const }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    setPending(true)
-    // TODO: wire up to a real submission endpoint (e.g. email service or API route)
-    await new Promise((r) => setTimeout(r, 800))
-    setPending(false)
-    toast.success(c.successMessage)
-    ;(e.target as HTMLFormElement).reset()
-  }
+export function ContactForm() {
+  const [state, action, pending] = useActionState(submitContactForm, initialState)
+  const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    if (state.status === "success") {
+      toast.success(c.successMessage)
+      formRef.current?.reset()
+    } else if (state.status === "error") {
+      toast.error(state.message)
+    }
+  }, [state])
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form ref={formRef} action={action} className="space-y-4">
       <div>
         <label htmlFor="name" className="block text-sm font-medium mb-2">
           {c.nameLabel}
@@ -74,7 +77,7 @@ export function ContactForm() {
           placeholder={c.messagePlaceholder}
         />
       </div>
-      <Button type="submit" size="lg" className="w-full rounded-full" disabled={pending}>
+      <Button type="submit" size="lg" className="w-full rounded-full" disabled={true}>
         {pending ? c.submittingButton : c.submitButton}
       </Button>
     </form>

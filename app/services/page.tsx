@@ -1,7 +1,14 @@
+import type { Metadata } from "next"
+import Link from "next/link"
 import { content } from "@/lib/content"
 import { shop } from "@/lib/shop"
 
 const c = content.servicesPage
+
+export const metadata: Metadata = {
+  title: c.metaTitle,
+  description: c.metaDescription,
+}
 
 export default function ServicesPage() {
   return (
@@ -37,12 +44,12 @@ export default function ServicesPage() {
             >
               Call Us: {shop.phone}
             </a>
-            <a
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 rounded-full border border-border font-semibold hover:bg-muted transition-colors"
             >
               {c.ctaVisitButton}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/hero-section"
 import { ProductHighlight } from "@/components/product-highlight"
 import { ServicesHighlight } from "@/components/services-highlight"
 import { ReviewsSection } from "@/components/reviews-section"
+import { PartnersSection } from "@/components/partners-section"
 import { ContactSection } from "@/components/contact-section"
 
 export default function Page() {
@@ -12,6 +13,7 @@ export default function Page() {
       <ProductHighlight />
       <ServicesHighlight />
       <ReviewsSection />
+      <PartnersSection />
       <ContactSection />
     </div>
   )

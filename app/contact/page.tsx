@@ -1,10 +1,16 @@
 import type React from "react"
+import type { Metadata } from "next"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { shop } from "@/lib/shop"
 import { content } from "@/lib/content"
 
 const c = content.contactPage
+
+export const metadata: Metadata = {
+  title: c.metaTitle,
+  description: c.metaDescription,
+}
 
 export default function ContactPage() {
   return (

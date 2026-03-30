@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,11 @@ import { Check, Zap, Shield, Heart, Phone } from "lucide-react"
 import { content } from "@/lib/content"
 
 const c = content.revvi
+
+export const metadata: Metadata = {
+  title: c.metaTitle,
+  description: c.metaDescription,
+}
 
 const benefitIcons = [Zap, Shield, Heart]
 

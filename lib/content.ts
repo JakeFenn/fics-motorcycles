@@ -211,13 +211,15 @@ export const content = {
 
   // ── Services page ─────────────────────────────────────────────────────────
   servicesPage: {
+    metaTitle:       "Services - FICS Motorcycles",
+    metaDescription: "Expert motorcycle services in Coppull. Maintenance, repairs, MOT, performance upgrades, and more. Contact us for pricing.",
     heading:    "Our Services",
     subheading: "From routine maintenance to custom builds, we've got you covered",
     items: [
       {
         title:       "Routine Maintenance",
         description: "Keep your bike running smoothly with regular maintenance services including oil changes, tyre changes, brake service, chain adjustments, and fluid checks.",
-        price:       "Starting at $[XX]",
+        price:       "Contact us for pricing",
       },
       {
         title:       "Engine Repair & Rebuild",
@@ -227,7 +229,7 @@ export const content = {
       {
         title:       "Performance Upgrades",
         description: "Unlock your bike's potential with exhaust systems, air filters, ECU tuning, suspension upgrades, and dyno tuning services.",
-        price:       "Starting at $[XX]",
+        price:       "Contact us for pricing",
       },
       {
         title:       "Custom Fabrication",
@@ -237,12 +239,12 @@ export const content = {
       {
         title:       "Electrical Services",
         description: "Complete electrical diagnostics and repair, lighting upgrades, battery service, and custom wiring for accessories.",
-        price:       "Starting at $[XX]",
+        price:       "Contact us for pricing",
       },
       {
         title:       "Detailing & Ceramic Coating",
         description: "Full wash and detail, paint correction, ceramic coating application, chrome polishing, and leather conditioning.",
-        price:       "Starting at $[XX]",
+        price:       "Contact us for pricing",
       },
     ],
     ctaHeading:      "Not Sure What You Need?",
@@ -254,6 +256,8 @@ export const content = {
 
   // ── Contact page ─────────────────────────────────────────────────────────
   contactPage: {
+    metaTitle:       "Contact - FICS Motorcycles",
+    metaDescription: "Get in touch with FICS Motorcycles. Visit us at 164 Preston Road, Coppull, call 01257 793318, or send us a message.",
     heading:        "Get In Touch",
     subheading:     "We're here to help with all your motorcycle needs",
     infoHeading:    "Contact Information",
@@ -266,6 +270,8 @@ export const content = {
 
   // ── Revvi page ────────────────────────────────────────────────────────────
   revvi: {
+    metaTitle:       "Revvi Electric Bikes - FICS Motorcycles",
+    metaDescription: "Authorised Revvi electric balance bike dealer in Coppull. Electric bikes for children aged 3-12. Expert advice, test rides, and full after-sales support.",
     badge:      "Featured Partner",
     heading:    "Revvi Electric Bikes",
     subheading:
