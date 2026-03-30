@@ -77,7 +77,7 @@ export function ContactForm() {
           placeholder={c.messagePlaceholder}
         />
       </div>
-      <Button type="submit" size="lg" className="w-full rounded-full" disabled={true}>
+      <Button type="submit" size="lg" className="w-full rounded-full" disabled={pending}>
         {pending ? c.submittingButton : c.submitButton}
       </Button>
     </form>

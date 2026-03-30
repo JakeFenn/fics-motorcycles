@@ -13,7 +13,7 @@ export default function Page() {
       <ProductHighlight />
       <ServicesHighlight />
       <ReviewsSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <ContactSection />
     </div>
   )
