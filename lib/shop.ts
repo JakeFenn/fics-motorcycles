@@ -9,7 +9,7 @@ export const shop = {
     mapsEmbedUrl: "https://maps.google.com/maps?q=FICS+Motorcycles,+Coppull&output=embed",
   },
   phone: "01257 793318",
-  email: "info@ficsmotorcycles.co.uk",
+  email: "wickyian@yahoo.co.uk",
   hours: {
     weekday: "Mon-Sat 9AM-5PM",
     saturday: "Mon-Sat 9AM-5PM",
