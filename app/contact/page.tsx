@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { MapPin, Phone, Clock, Mail } from "lucide-react"
-import { ContactForm } from "@/components/contact-form"
 import { shop } from "@/lib/shop"
 import { content } from "@/lib/content"
 
@@ -41,7 +40,7 @@ export default function ContactPage() {
 
           <div>
             <h2 className="text-3xl font-bold mb-8">{c.formHeading}</h2>
-            <ContactForm />
+            <p className="text-muted-foreground">Online enquiries are temporarily unavailable. Please call or email us directly.</p>
           </div>
         </div>
 
