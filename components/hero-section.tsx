@@ -21,7 +21,6 @@ export function HeroSection() {
             <br />
             <span className="text-primary">{c.headingLine2}</span>
             <br />
-            <span className="text-muted-foreground/70">{c.headingLine3}</span>
           </h1>
 
           {/* Subheading */}
@@ -84,12 +83,14 @@ export function HeroSection() {
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {c.brands.map((brand) => (
-            <div
-              key={brand}
-              className="flex items-center justify-center px-6 py-5 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
+            <Link
+              key={brand.name}
+              href={brand.href}
+              className="flex items-center justify-center gap-2 px-6 py-5 rounded-2xl bg-card border border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 hover:shadow-lg hover:shadow-primary/10"
             >
-              <span className="text-base font-black text-foreground tracking-tight">{brand}</span>
-            </div>
+              <span className="text-base font-black text-foreground tracking-tight">{brand.name}</span>
+              <ArrowRight className="w-4 h-4 text-primary flex-shrink-0" />
+            </Link>
           ))}
         </div>
       </div>

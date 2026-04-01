@@ -21,6 +21,11 @@ export const content = {
     links: [
       { id: "home",     label: "Home",     href: "/" },
       { id: "revvi",    label: "Revvi",    href: "/revvi" },
+      { id: "brands",   label: "Brands",   dropdown: [
+        { id: "stomp",     label: "Stomp",     href: "/stomp" },
+        { id: "thumpstar", label: "Thumpstar", href: "/thumpstar" },
+        { id: "muc-off",   label: "Muc-Off",   href: "/muc-off" },
+      ]},
       { id: "about",    label: "About",    href: "/about" },
       { id: "services", label: "Services", href: "/services" },
       { id: "contact",  label: "Contact",  href: "/contact" },
@@ -30,9 +35,8 @@ export const content = {
   // ── Home page — Hero section ──────────────────────────────────────────────
   hero: {
     // The three lines of the large heading
-    headingLine1: "Your local",
-    headingLine2: "motorcycle",
-    headingLine3: "community",
+    headingLine1: "FICS",
+    headingLine2: "Motorcycles",
     subheading:
       "Expert service, premium parts, and a passionate community of riders. Your trusted partner on every ride.",
     ctaPrimary:   "Get Directions",
@@ -44,7 +48,12 @@ export const content = {
     // Text above the brand logos
     authorisedDealerBadge: "Official Authorised Dealer",
     // Brand logos shown across the bottom of the hero
-    brands: ["Revvi", "Stomp", "Other", "Other2"],
+    brands: [
+      { name: "Revvi",  href: "/revvi" },
+      { name: "Stomp",  href: "/stomp" },
+      { name: "Thumpstar",  href: "/thumpstar" },
+      { name: "Muc-Off", href: "/muc-off" },
+    ],
   },
 
   // ── Home page — Products / What We Offer section ─────────────────────────
@@ -336,6 +345,186 @@ export const content = {
     ctaHeading:       "Ready to Get Your Child Started?",
     ctaText:
       "Visit our shop to see the Revvi range in person, or get in touch to discuss which model is right for your child. We offer expert advice, test rides, and full after-sales support.",
+    ctaContactButton: "Contact Us",
+    ctaHomeButton:    "Back to Home",
+  },
+
+  // ── Stomp page ────────────────────────────────────────────────────────────
+  stomp: {
+    metaTitle:       "Stomp Pit Bikes - FICS Motorcycles",
+    metaDescription: "Authorised Stomp pit bike dealer in Coppull. Quality pit bikes and mini motos for all ages and skill levels.",
+    badge:      "Official Authorised Dealer",
+    heading:    "Stomp Pit Bikes",
+    subheading:
+      "We're proud to be an authorised dealer for Stomp, one of the UK's most popular pit bike brands. Built tough and designed to perform, Stomp bikes deliver incredible value for riders of all ages.",
+    enquireButton:    "Enquire Now",
+    viewModelsButton: "View Models",
+    heroImageAlt:     "Stomp pit bike",
+
+    benefitsHeading: "Why Choose Stomp?",
+    benefits: [
+      {
+        title:       "Built to Last",
+        description: "Robust construction and quality components designed to handle the rigours of pit bike riding",
+      },
+      {
+        title:       "All Ages",
+        description: "A model for every rider from young beginners to experienced adults",
+      },
+      {
+        title:       "Great Value",
+        description: "Competitive pricing without compromising on performance or reliability",
+      },
+    ],
+
+    modelsHeading:    "Available Models",
+    modelsSubheading: "Find the right Stomp for your riding style and experience",
+    agesPrefix:       "Ages",
+    getDetailsButton: "Get Details",
+    models: [
+      {
+        name:     "Stomp Z3",
+        age:      "6+ years",
+        features: ["50cc engine", "Automatic transmission", "Front & rear disc brakes"],
+        image:    "/stomp-z3.jpg",
+      },
+      {
+        name:     "Stomp ZS140",
+        age:      "10+ years",
+        features: ["140cc engine", "4-speed manual", "Upside-down front forks"],
+        image:    "/stomp-zs140.jpg",
+      },
+      {
+        name:     "Stomp Juicy 125",
+        age:      "Adult",
+        features: ["125cc engine", "Full-size pit bike", "Pit bike racing spec"],
+        image:    "/stomp-juicy-125.jpg",
+      },
+    ],
+
+    ctaHeading:       "Ready to Ride?",
+    ctaText:
+      "Visit our shop to see the Stomp range in person, or get in touch for expert advice on choosing the right model for you.",
+    ctaContactButton: "Contact Us",
+    ctaHomeButton:    "Back to Home",
+  },
+
+  // ── Thumpstar page ────────────────────────────────────────────────────────
+  thumpstar: {
+    metaTitle:       "Thumpstar Pit Bikes - FICS Motorcycles",
+    metaDescription: "Authorised Thumpstar pit bike dealer in Coppull. Premium pit bikes renowned for performance and durability.",
+    badge:      "Official Authorised Dealer",
+    heading:    "Thumpstar Pit Bikes",
+    subheading:
+      "As an authorised Thumpstar dealer, we bring you one of the world's most respected pit bike brands. Thumpstar bikes are built for performance, designed to last, and trusted by riders across the globe.",
+    enquireButton:    "Enquire Now",
+    viewModelsButton: "View Models",
+    heroImageAlt:     "Thumpstar pit bike",
+
+    benefitsHeading: "Why Choose Thumpstar?",
+    benefits: [
+      {
+        title:       "Race Proven",
+        description: "Developed and tested in competitive motorsport environments for maximum performance",
+      },
+      {
+        title:       "Premium Quality",
+        description: "High-spec components and precision engineering set Thumpstar apart from the competition",
+      },
+      {
+        title:       "Full Support",
+        description: "Backed by our expert team for servicing, parts, and technical advice",
+      },
+    ],
+
+    modelsHeading:    "Available Models",
+    modelsSubheading: "Explore the Thumpstar range — built for riders who demand more",
+    agesPrefix:       "Ages",
+    getDetailsButton: "Get Details",
+    models: [
+      {
+        name:     "Thumpstar TSB 50",
+        age:      "6+ years",
+        features: ["50cc engine", "Automatic transmission", "Hydraulic disc brakes"],
+        image:    "/thumpstar-tsb50.jpg",
+      },
+      {
+        name:     "Thumpstar TSB 110",
+        age:      "10+ years",
+        features: ["110cc engine", "4-speed manual", "Adjustable suspension"],
+        image:    "/thumpstar-tsb110.jpg",
+      },
+      {
+        name:     "Thumpstar TSB 150",
+        age:      "14+ years",
+        features: ["150cc engine", "Race-spec forks", "Pit bike racing ready"],
+        image:    "/thumpstar-tsb150.jpg",
+      },
+    ],
+
+    ctaHeading:       "Ready to Experience Thumpstar?",
+    ctaText:
+      "Come into the shop to see the Thumpstar range up close, or contact us to discuss which model suits your riding ambitions.",
+    ctaContactButton: "Contact Us",
+    ctaHomeButton:    "Back to Home",
+  },
+
+  // ── Muc-Off page ──────────────────────────────────────────────────────────
+  mucOff: {
+    metaTitle:       "Muc-Off Products - FICS Motorcycles",
+    metaDescription: "Official Muc-Off stockist in Coppull. Premium motorcycle cleaning, care, and maintenance products.",
+    badge:      "Official Stockist",
+    heading:    "Muc-Off Products",
+    subheading:
+      "We're an official stockist of Muc-Off, the world's leading motorcycle cleaning and care brand. Keep your bike looking and performing its best with Muc-Off's award-winning range of products.",
+    enquireButton:    "Enquire Now",
+    viewModelsButton: "View Products",
+    heroImageAlt:     "Muc-Off motorcycle cleaning products",
+
+    benefitsHeading: "Why Choose Muc-Off?",
+    benefits: [
+      {
+        title:       "World's Best",
+        description: "Trusted by professional race teams and everyday riders across the globe",
+      },
+      {
+        title:       "Biodegradable",
+        description: "Environmentally friendly formulas that are tough on dirt but safe for the planet",
+      },
+      {
+        title:       "Full Range",
+        description: "Everything you need to clean, protect, and maintain your bike in one brand",
+      },
+    ],
+
+    modelsHeading:    "Product Ranges",
+    modelsSubheading: "Muc-Off makes everything your bike needs to stay clean and protected",
+    agesPrefix:       "",
+    getDetailsButton: "Find Out More",
+    models: [
+      {
+        name:     "Bike Cleaner",
+        age:      "All bikes",
+        features: ["Biodegradable formula", "Safe on all surfaces", "Professional & home use"],
+        image:    "/muc-off-cleaner.jpg",
+      },
+      {
+        name:     "Lubricants",
+        age:      "All bikes",
+        features: ["Chain lube", "Dry & wet conditions", "Long-lasting protection"],
+        image:    "/muc-off-lube.jpg",
+      },
+      {
+        name:     "Care & Protection",
+        age:      "All bikes",
+        features: ["Frame protect", "Anti-corrosion", "UV protection"],
+        image:    "/muc-off-protect.jpg",
+      },
+    ],
+
+    ctaHeading:       "Stock Up on Muc-Off",
+    ctaText:
+      "Visit us in store to browse our full range of Muc-Off products, or get in touch to check availability on specific items.",
     ctaContactButton: "Contact Us",
     ctaHomeButton:    "Back to Home",
   },
