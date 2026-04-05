@@ -315,30 +315,52 @@ export const content = {
         age:      "3-6 years",
         features: ['12" wheels', "Adjustable speed settings", "Up to 60 mins ride time"],
         image:    "/revvi-twelve.jpg",
+        colors: [
+          { name: "Red",  hex: "#e63946" },
+          { name: "Blue", hex: "#457b9d" },
+          { name: "Pink", hex: "#e07bab" },
+        ],
       },
       {
         name:     "Revvi Sixteen",
         age:      "5-9 years",
         features: ['16" wheels', "3 speed modes", "Up to 90 mins ride time"],
         image:    "/revvi-sixteen.jpg",
+        colors: [
+          { name: "Red",   hex: "#e63946" },
+          { name: "Blue",  hex: "#457b9d" },
+          { name: "Green", hex: "#2d6a4f" },
+        ],
       },
       {
         name:     "Revvi Sixteen Plus",
         age:      "5-9 years",
         features: ['16" wheels', "Enhanced power", "Up to 90 mins ride time"],
         image:    "/revvi-sixteen-plus.jpg",
+        colors: [
+          { name: "Red",    hex: "#e63946" },
+          { name: "Orange", hex: "#f4a261" },
+        ],
       },
       {
         name:     "Revvi Eighteen",
         age:      "6-10 years",
         features: ['18" wheels', "3 speed modes", "Up to 100 mins ride time"],
         image:    "/revvi-eighteen.jpg",
+        colors: [
+          { name: "Red",  hex: "#e63946" },
+          { name: "Blue", hex: "#457b9d" },
+        ],
       },
       {
         name:     "Revvi Twenty",
         age:      "7-12 years",
         features: ['20" wheels', "Advanced controls", "Up to 120 mins ride time"],
         image:    "/revvi-twenty.jpg",
+        colors: [
+          { name: "Red",   hex: "#e63946" },
+          { name: "Black", hex: "#1a1a1a" },
+        ],
       },
     ],
 

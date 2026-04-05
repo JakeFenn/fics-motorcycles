@@ -1,41 +1,13 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Check, Zap, Shield, Heart, Phone } from "lucide-react"
+import { Zap, Shield, Heart, Phone } from "lucide-react"
+import { ModelCard } from "@/components/model-card"
+import type { BrandContent } from "@/lib/types"
 
 const benefitIcons = [Zap, Shield, Heart]
-
-interface Benefit {
-  title: string
-  description: string
-}
-
-interface Model {
-  name: string
-  image: string
-  age?: string
-  features: string[]
-}
-
-interface BrandContent {
-  badge: string
-  heading: string
-  subheading: string
-  enquireButton: string
-  viewModelsButton: string
-  heroImageAlt: string
-  benefitsHeading: string
-  benefits: Benefit[]
-  modelsHeading: string
-  modelsSubheading: string
-  models: Model[]
-  getDetailsButton: string
-  agesPrefix?: string
-  ctaHeading: string
-  ctaText: string
-  ctaContactButton: string
-  ctaHomeButton: string
-}
 
 export function BrandPage({ content: c, heroImage }: { content: BrandContent; heroImage: string }) {
   return (
@@ -95,33 +67,12 @@ export function BrandPage({ content: c, heroImage }: { content: BrandContent; he
           </p>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {c.models.map((model) => (
-              <div
+              <ModelCard
                 key={model.name}
-                className="bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-colors"
-              >
-                <div className="relative h-64">
-                  <Image src={model.image} alt={model.name} fill className="object-cover" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{model.name}</h3>
-                  {model.age && (
-                    <p className="text-primary font-medium mb-4">
-                      {c.agesPrefix ? `${c.agesPrefix} ${model.age}` : model.age}
-                    </p>
-                  )}
-                  <ul className="space-y-2 mb-6">
-                    {model.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2">
-                        <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                        <span className="text-sm text-muted-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full rounded-full">{c.getDetailsButton}</Button>
-                  </Link>
-                </div>
-              </div>
+                model={model}
+                agesPrefix={c.agesPrefix}
+                getDetailsButton={c.getDetailsButton}
+              />
             ))}
           </div>
         </div>
