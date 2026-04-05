@@ -9,7 +9,6 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
-      <div className="h-64 bg-gradient-to-b from-background via-primary/5 to-background" />
       <ProductHighlight />
       <ServicesHighlight />
       <ReviewsSection />
